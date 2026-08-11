@@ -1,7 +1,9 @@
 """
 Controller for routes
 """
-from flask import jsonify, url_for, abort
+
+from flask import abort, jsonify, url_for
+
 from service import app
 from service.common import status
 
