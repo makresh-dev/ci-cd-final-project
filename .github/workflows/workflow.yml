@@ -1,26 +1,19 @@
-name: Python CI
+name: CI workflow
 
 on:
   push:
-    branches:
-      - main
-
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
-  ci:
+  build:
     runs-on: ubuntu-latest
+    container: python:3.9-slim
 
     steps:
-      - name: Checkout source code
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
+      - name: Checkout
+        uses: actions/checkout@v3
 
       - name: Install dependencies
         run: |
